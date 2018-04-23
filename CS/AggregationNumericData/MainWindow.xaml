@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" 
+    x:Class="AggregationNumericData.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <dxc:ChartControl >
+            <dxc:ChartControl.Legend>
+                <dxc:Legend/>
+            </dxc:ChartControl.Legend>
+            <dxc:XYDiagram2D>
+                <dxc:XYDiagram2D.AxisX>
+                    <dxc:AxisX2D GridLinesVisible="True">
+                        <dxc:AxisX2D.NumericScaleOptions>
+                            <dxc:ManualNumericScaleOptions MeasureUnit="100" GridAlignment="1000" 
+                                                           AggregateFunction="Maximum" GridSpacing="2"/>
+                        </dxc:AxisX2D.NumericScaleOptions>
+                    </dxc:AxisX2D>
+                </dxc:XYDiagram2D.AxisX>
+                <dxc:LineSeries2D DataSource="{Binding Path=Series}" 
+                                  ArgumentDataMember="Argument" ValueDataMember="Value"/>
+            </dxc:XYDiagram2D>
+        </dxc:ChartControl>
+    </Grid>
+</Window>
