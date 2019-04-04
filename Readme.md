@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [MainWindow.xaml](./CS/AggregationNumericData/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/AggregationNumericData/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/AggregationNumericData/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/AggregationNumericData/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/AggregationNumericData/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/AggregationNumericData/MainWindow.xaml.vb))
 <!-- default file list end -->
 # How to use manual numeric scale options of an Axis
 
