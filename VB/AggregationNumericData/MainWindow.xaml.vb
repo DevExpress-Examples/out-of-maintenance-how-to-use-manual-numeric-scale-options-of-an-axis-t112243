@@ -1,11 +1,11 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.Windows
 
 Namespace AggregationNumericData
 	Partial Public Class MainWindow
 		Inherits Window
+
 		Public Sub New()
 			InitializeComponent()
 			DataContext = New AggregationDataContext()
@@ -15,16 +15,17 @@ Namespace AggregationNumericData
 	Public Class AggregationDataContext
 		Private Const pointCount As Integer = 100000
 
-		Private ReadOnly series_Renamed As New List(Of NumericPoint)()
+'INSTANT VB NOTE: The field series was renamed since Visual Basic does not allow fields to have the same name as other class members:
+		Private ReadOnly series_Conflict As New List(Of NumericPoint)()
 
 		Public ReadOnly Property Series() As List(Of NumericPoint)
 			Get
-				Return series_Renamed
+				Return series_Conflict
 			End Get
 		End Property
 
 		Public Sub New()
-			FillPoints(series_Renamed)
+			FillPoints(series_Conflict)
 		End Sub
 
 		Private Sub FillPoints(ByVal series As List(Of NumericPoint))
@@ -44,23 +45,25 @@ Namespace AggregationNumericData
 	End Class
 
 	Public Class NumericPoint
-		Private ReadOnly argument_Renamed As Double
-		Private ReadOnly value_Renamed As Double
+'INSTANT VB NOTE: The field argument was renamed since Visual Basic does not allow fields to have the same name as other class members:
+		Private ReadOnly argument_Conflict As Double
+'INSTANT VB NOTE: The field value was renamed since Visual Basic does not allow fields to have the same name as other class members:
+		Private ReadOnly value_Conflict As Double
 
 		Public ReadOnly Property Argument() As Double
 			Get
-				Return argument_Renamed
+				Return argument_Conflict
 			End Get
 		End Property
 		Public ReadOnly Property Value() As Double
 			Get
-				Return value_Renamed
+				Return value_Conflict
 			End Get
 		End Property
 
 		Public Sub New(ByVal argument As Double, ByVal value As Double)
-			Me.argument_Renamed = argument
-			Me.value_Renamed = value
+			Me.argument_Conflict = argument
+			Me.value_Conflict = value
 		End Sub
 	End Class
 End Namespace
